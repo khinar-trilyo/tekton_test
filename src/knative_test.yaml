@@ -1,0 +1,15 @@
+apiVersion: serving.knative.dev/v1
+kind: Service
+metadata:
+  name: knative-test
+  namespace: durian
+spec:
+  template:  
+    spec:      
+      containerConcurrency: 200  
+      containers:
+      - image: docker.io/khinar/knative-test
+        env:
+        - name: namespace
+          value: "durian"
+
