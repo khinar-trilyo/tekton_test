@@ -1,5 +1,5 @@
 functions.getProperties(bot_flow.properties, session.child_botId || session.botId, function (props) {
     let returnData = [];
     if (callback) callback(returnData);
-    return "This is a test updated";
+    return "This is a test";
 });
