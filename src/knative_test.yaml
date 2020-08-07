@@ -4,7 +4,11 @@ metadata:
   name: knative-test
   namespace: durian
 spec:
+
   template:  
+    metadata:
+      labels:
+        app: knative-test
     spec:      
       containerConcurrency: 200  
       containers:

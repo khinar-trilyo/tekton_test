@@ -60,4 +60,61 @@ tkn taskrun logs --last -f
 
 ## Tekton Pipelines
 
+Tasks can firther organized into pipelines which can control the order of execution of several tasks. Following creates another task 
+(including the hello task created above) :
+
+
+```
+apiVersion: tekton.dev/v1beta1
+kind: Task
+metadata:
+  name: goodbye
+spec:
+  steps:
+    - name: goodbye
+      image: ubuntu
+      script: |
+        #!/bin/bash
+        echo "Goodbye World!"
+
+```
+
+A pipeline thus allows to combine the tasks and control the order of execution of tasks. A simple pipeline to run above tasks in order looks like :
+
+```
+apiVersion: tekton.dev/v1beta1
+kind: Pipeline
+metadata:
+  name: hello-goodbye
+spec:
+  tasks:
+  - name: hello
+    taskRef:
+      name: hello
+  - name: goodbye
+    runAfter:
+     - hello
+    taskRef:
+      name: goodbye
+```
+
+Just like tasks, pipelines need a pipeline run to specify runtime information :
+
+```
+apiVersion: tekton.dev/v1beta1
+kind: PipelineRun
+metadata:
+  creationTimestamp: null
+  generateName: hello-goodbye-run-
+  namespace: default
+spec:
+  pipelineRef:
+    name: hello-goodbye
+status: {}
+
+```
+
+
+## Core 
+
 
