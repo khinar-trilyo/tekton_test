@@ -1,4 +1,4 @@
-functions.getProperties(bot_flow.properties, session.child_botId || session.botId, function(props) {
+functions.getPropertiesss(bot_flow.properties, session.child_botId || session.botId, function(props) {
         let returnData = [];
         let countriesArray = [];
         props.map(property => {
