@@ -1,4 +1,4 @@
 function getProperties(){
-    return "Hello World from dashboard 2.0"
+    return "Hello World from dashboard 3.0"
 }
 module.exports=getProperties
