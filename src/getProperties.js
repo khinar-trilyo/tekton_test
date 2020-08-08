@@ -3,3 +3,4 @@ functions.getProperties(bot_flow.properties, session.child_botId || session.botI
         // if (callback) callback(returnData);
         return "Hello World! from dashboard. Updated. 1.0"
     });
+module.exports=getProperties
