@@ -1,5 +1,5 @@
 functions.getProperties(bot_flow.properties, session.child_botId || session.botId, function(props) {
         // let returnData = [];
         // if (callback) callback(returnData);
-        return "Hello World! from dashboard. Updated."
+        return "Hello World! from dashboard. Updated. 1.0"
     });
