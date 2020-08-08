@@ -1,6 +1,4 @@
-functions.getProperties(bot_flow.properties, session.child_botId || session.botId, function(props) {
-        // let returnData = [];
-        // if (callback) callback(returnData);
-        return "Hello World! from dashboard. Updated. 1.0"
-    });
+function getProperties(){
+    return "Hello World from dashboard 2.0"
+}
 module.exports=getProperties
