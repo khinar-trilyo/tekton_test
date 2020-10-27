@@ -1,3 +1,24 @@
 module.exports = async (context, callback) => {
-    return { status: "This is a sample function" }
+    return [
+        {
+            "content_type": "text",
+            "title": "Hello",
+            "payload": [
+                "START",
+                {
+                    "lead_ts_traveling_to": "VarSettingTest"
+                }
+            ]
+        },
+        {
+            "content_type": "text",
+            "title": "World",
+            "payload": [
+                "START",
+                {
+                    "lead_ts_traveling_to": "AnotherVarSettingTest"
+                }
+            ]
+        }
+    ]
 };
